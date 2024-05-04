@@ -1,7 +1,7 @@
 pipeline{
     agent {
         docker {
-            image pbweb/yarn-prometheus-exporter
+            image 'pbweb/yarn-prometheus-exporter'
             args '-v /tmp:/tmp'
         }
     }
