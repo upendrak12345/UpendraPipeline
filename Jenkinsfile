@@ -1,12 +1,16 @@
-pipeline {
-  agent {
-    docker { image 'node:16-alpine' }
-  }
-  stages {
-    stage('Test') {
-      steps {
-        sh 'node --version'
-      }
+pipeline{
+    agent{
+        docker {
+            image: pbweb/yarn-prometheus-exporter
+            args '-v /tmp:/tmp'
+        }
     }
-  }
+    stages{
+        stage('Example Stage'){
+            steps{
+                sh 'cat /etc/os-release'
+                sh 'df -Ph'
+            }
+        }
+    }
 }
