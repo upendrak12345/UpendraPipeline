@@ -5,7 +5,7 @@ pipeline{
     }
     stages{
         stage('My First Stage'){
-            steps{sh 'echo ${params.pick}'}
+            steps{echo "Choice: ${params.pick}"}
             
         }
     }
