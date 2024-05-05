@@ -5,7 +5,7 @@ pipeline{
     }
     stages{
         stage('My First Stage'){
-            sh
+            sh 'echo ${params.pick}
         }
     }
 }
