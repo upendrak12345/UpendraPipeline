@@ -15,7 +15,7 @@ pipeline{
         }
     }
     post{
-        awlays{
+        always{
             echo "Hello World"
         }
     }
