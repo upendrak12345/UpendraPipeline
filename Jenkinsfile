@@ -1,19 +1,13 @@
 pipeline{
     agent any
-
+    environment{
+        USER=credentials('upendra_ssh')
+    }
     stages{
-        stage('My first stage'){
-            environment{
-                USERNAME=credentials('upendra_creds')
-            }
+        stage('My First Stage'){
             steps{
-                sh 'printenv '
-
-            }
-        }
-        stage('My Second stage'){
-            steps{
-                sh 'printenv'
+                sh 'echo $USER_USR'
+                sh 'echo $USER'
             }
         }
     }
