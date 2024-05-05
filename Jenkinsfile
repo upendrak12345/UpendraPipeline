@@ -1,23 +1,13 @@
 pipeline{
-    agent {
-        docker {image 'amazonlinux'}
+    agent any
+    environment{
+        node='PRODUCTION'
     }
     stages{
-        stage('First Stage'){
+        stage('My First Stage'){
             steps{
-                echo "Hello World"
-            }
-        }
-        stage('Second Stage'){
-            steps{
-                sh 'uname -a'
+                echo $node
             }
         }
     }
-    post{
-        always{
-            echo "Hello World"
-        }
-    }
-
 }
