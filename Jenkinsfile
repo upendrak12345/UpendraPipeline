@@ -1,17 +1,11 @@
-pipeline {
+pipeline{
     agent any
-    options{
-        timeout(time: 5000, unit: 'SECONDS')
-        retry(2)
-        checkoutToSubdirectory('test')
-        timestamps()
-        skipDefaultCheckout()
+    parameters{
+        choice(name:'pick' , choices:['One', 'Two', 'Three'], description: ' Pick something')
     }
     stages{
-        stage('My first stage') {
-            steps{
-                sh 'echo Test'
-            }
+        stage('My First Stage'){
+            sh
         }
     }
 }
