@@ -1,15 +1,15 @@
 pipeline{
     agent {
-        docker {
-            image 'node:16-alpine'
+        docker{
+            image 'amazonlinux'
             args '-v /tmp:/tmp'
         }
     }
-    stages{
-        stage('Example Stage'){
+    stages {
+        stage('My First stage'){
             steps{
-                sh 'node --version'
                 sh 'df -Ph'
+                sh 'cat /etc/os-release'
             }
         }
     }
