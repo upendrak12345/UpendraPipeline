@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment{
-        USERNAME=credentials('upendra_creds_USR')
+        USERNAME=credentials('upendra_creds')
         //PASSWORD=credentials('upendra_creds_PSW')
     }
     stages{
