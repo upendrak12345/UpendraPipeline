@@ -1,7 +1,7 @@
 pipeline {
     agent any
     options{
-        timeout(time: 2, unit: 'SECONDS')
+        timeout(time: 5000, unit: 'SECONDS')
         retry(2)
         checkoutToSubdirectory('test')
     }
