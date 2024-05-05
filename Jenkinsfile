@@ -1,12 +1,18 @@
-pipeline{
+pipeline {
     agent any
-    parameters{
-        choice(name:'pick' , choices:['One', 'Two', 'Three'], description: ' Pick something')
-    }
-    stages{
-        stage('My First Stage'){
-            steps{sh "echo ${params.pick}"}
-            
+    stages {
+        stage('Example') {
+            input {
+                message "Should we continue?"
+                ok "Yes, we should."
+                submitter "alice,bob"
+                parameters {
+                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                }
+            }
+            steps {
+                echo "Hello, ${PERSON}, nice to meet you."
+            }
         }
     }
 }
