@@ -5,6 +5,7 @@ pipeline {
         retry(2)
         checkoutToSubdirectory('test')
         timestamps()
+        skipDefaultCheckout()
     }
     stages{
         stage('My first stage') {
