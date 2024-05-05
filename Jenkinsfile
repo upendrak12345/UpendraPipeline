@@ -1,12 +1,12 @@
 pipeline{
     agent any
     environment{
-        node='PRODUCTION'
+        env_node='PRODUCTION'
     }
     stages{
         stage('My First Stage'){
             steps{
-                echo $node
+                sh 'echo $env_node'
             }
         }
     }
