@@ -7,13 +7,13 @@ pipeline{
                 USERNAME=credentials('upendra_creds')
             }
             steps{
-                sh 'echo username is $USERNAME '
+                sh 'printenv '
 
             }
         }
         stage('My Second stage'){
             steps{
-                sh 'echo username is $USERNAME '
+                sh 'printenv'
             }
         }
     }
