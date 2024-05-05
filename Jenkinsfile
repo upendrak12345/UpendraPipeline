@@ -1,13 +1,14 @@
-pipeline{
+pipeline {
     agent any
-    environment{
-        USER=credentials('upendra_ssh')
+    options{
+        timeout: 2, unit: 'SECONDS'
+        retry(2)
+        checkoutToSubdirectory('test')
     }
     stages{
-        stage('My First Stage'){
+        stage('My first stage') {
             steps{
-                sh 'echo $USER_USR'
-                sh 'echo $USER'
+                sh 'sdfdsfsdf'
             }
         }
     }
