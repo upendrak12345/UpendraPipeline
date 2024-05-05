@@ -10,7 +10,7 @@ pipeline {
     stages{
         stage('My first stage') {
             steps{
-                sh 'sdfdsfsdf'
+                sh 'echo Test'
             }
         }
     }
