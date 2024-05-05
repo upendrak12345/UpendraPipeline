@@ -1,15 +1,19 @@
 pipeline{
     agent any
-    environment{
-        USERNAME=credentials('upendra_creds')
-        //PASSWORD=credentials('upendra_creds_PSW')
-    }
+
     stages{
         stage('My first stage'){
+            environment{
+                USERNAME=credentials('upendra_creds')
+            }
             steps{
-                sh 'echo  $USERNAME_USR '
-                //sh 'echo "password is $PASSWORD" '
+                sh 'echo username is $USERNAME '
 
+            }
+        }
+        stage('My Second stage'){
+            steps{
+                sh 'echo username is $USERNAME '
             }
         }
     }
