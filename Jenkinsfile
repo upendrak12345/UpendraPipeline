@@ -7,7 +7,7 @@ pipeline{
     stages{
         stage('My first stage'){
             steps{
-                sh 'echo  $USERNAME '
+                sh 'echo  $USERNAME_USR '
                 //sh 'echo "password is $PASSWORD" '
 
             }
