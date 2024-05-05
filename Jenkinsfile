@@ -1,16 +1,27 @@
 pipeline{
-    agent {
-        docker{
-            image 'amazonlinux'
-            args '-v /tmp:/tmp'
-        }
+    agent{
+        docker {image 'amazonlinux'}
     }
-    stages {
-        stage('My First stage'){
+    stages{
+        stage('First Stage') {
             steps{
                 sh 'df -Ph'
-                sh 'cat /etc/os-release'
+                echo 'cat /etc/os-release'
             }
+        }
+    }
+    post{
+        success{
+            echo "Pipeline has been run successfully"
+        }
+        failure{
+            echo "Pipeline has failed to run"
+        }
+        always{
+            echo "Jenkins pipeline has been completed"
+        }
+        cleanup{
+            echo "Testing cleanup condition"
         }
     }
 }
