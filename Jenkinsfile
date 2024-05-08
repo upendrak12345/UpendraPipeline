@@ -6,7 +6,7 @@ pipeline {
     stages{
         stage('My First Stage'){
             steps{
-                echo ${params.Choose}
+                echo "${params.Choose}"
             }
         }
     }
