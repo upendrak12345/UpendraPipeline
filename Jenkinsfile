@@ -7,7 +7,7 @@ pipeline {
                 ok ' Ok to proceed'
                 submitter 'admin'
                 parameters{
-                    chooice(name: 'choose', choices:['one','two','three'],description:'Choose one')
+                    choice(name: 'choose', choices:['one','two','three'],description:'Choose one')
                 }
             }
             steps{
