@@ -11,7 +11,7 @@ pipeline {
                 }
             }
             steps{
-                echo "${params.choose}"
+                echo "${choose}"
             }
         }
     }
