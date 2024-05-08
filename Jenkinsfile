@@ -1,13 +1,19 @@
 pipeline {
     agent any
-    parameters{
-        choice(name: 'Choose', choices:['one','two','three'],description:'')
-    }
     stages{
-        stage('My First Stage'){
+        stage("First Stage"){
+            input{
+                message 'Enter the details'
+                ok ' Ok to proceed'
+                submitter 'admin'
+                parameters{
+                    chooice(name: 'choose', choices:['one','two','three'],description:'Choose one')
+                }
+            }
             steps{
-                echo "${params.Choose}"
+                echo "${params.choose}"
             }
         }
     }
+
 }
