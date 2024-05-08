@@ -6,7 +6,7 @@ pipeline {
     stages{
         stage('My First Stage'){
             steps{
-                sh ' echo $params.Choose'
+                echo $params.Choose
             }
         }
     }
